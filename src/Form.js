@@ -7,6 +7,7 @@ const AddTodoForm = styled.form`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 3%;
 `;
 
 const AddTodoInput = styled.input`

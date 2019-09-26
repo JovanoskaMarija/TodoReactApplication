@@ -7,24 +7,23 @@ const TodoWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background: #f2f2f2;
-  border-radius: 5px;
+  border-bottom: 2px solid #009999; 
   margin: 2%;
 `;
 
 const TodoItem = styled.div`
   margin: 2%;
+  
 `;
 
 const DeleteButton = styled.button`
   width: 10%;
   padding: 0.5rem;
   margin: 0.5rem;
-  border: 2px solid #009999;
-  border-radius: 5px;
-  background: #009999;
-  color: white;
-  
+  border: none;
+  background: transparent;
+  color:  #009999;
+  cursor: pointer;
 `;
 
 const Todo = props => {

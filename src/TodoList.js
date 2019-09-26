@@ -19,6 +19,10 @@ const TodoItemsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background: #f2f2f2;
+  border-radius: 5px;
+  margin-top:2%;
+  padding: 3%;
 `;
 
 const TodoItemsList = styled.div`
@@ -31,7 +35,6 @@ const TodoFilterButtons = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   margin-top: 3%;
-  background: #f2f2f2;
 `;
 
 const Button = styled.button`
