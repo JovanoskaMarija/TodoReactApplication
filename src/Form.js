@@ -18,7 +18,7 @@ class Form extends Component {
         complete: false,
         id: shortid.generate()
       });
-      this.setState({ text: "" });
+      this.setState({ text: "" }); // TODO: Remove line since it's redundant
     }
     
     this.setState({ text: "" });

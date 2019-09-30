@@ -17,6 +17,12 @@ class TodoList extends Component {
     allTrue: true
   };
 
+
+// TODO: Extract the Filter as a seperate component
+// TODO: Extract the List as a seperate component
+// TODO: Style the h1 color attribute through the TodoListContainer styled component
+
+
   render() {
     let active = this.state.todos.filter(todo => !todo.complete);
     let done = this.state.todos.filter(todo => todo.complete);
@@ -29,6 +35,8 @@ class TodoList extends Component {
         <div> Active todos: {active.length}</div>
         <TodoItemsContainer>
           <TodoItemsList>{todoList}</TodoItemsList>
+
+          
           <TodoFilterButtons>
             Filters:
             <Button onClick={() => this.changeFilter("all")}>All Todos</Button>
@@ -57,6 +65,10 @@ class TodoList extends Component {
   };
 
   generateViewList(prevState) {
+
+    // TODO: Grab todos from prevState, not from this.state
+    // TODO: Write the below logic, without using nested if statements
+
     let todos = [...this.state.todos];
     if (prevState.filter === "all") {
       todos = [...prevState.todos];
