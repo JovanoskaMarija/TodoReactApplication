@@ -11,9 +11,14 @@ export const TodoWrapper = styled.div`
 `;
 
 export const Text = styled.div`
-  margin: 2%;
+  box-sizing: "border-box";
   ${ props => props.checked ? " color: grey; text-decoration:line-through;" : null }
   /* font-size: ${ props => props.checked ? "10px" : null}; */
+  width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
 `;
 
 export const DeleteButton = styled.button`
