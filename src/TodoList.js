@@ -25,6 +25,15 @@ class TodoList extends Component {
 
   render() {
     let active = this.state.todos.filter(todo => !todo.complete);
+
+    // TODO: We can improve this code, we can use a better function instead of filter,
+    // since we are interested if at least one of the todo is complete in order to show the button
+    //  .some() does the same thing as filter, with the difference that It stops checking the array
+    // as soon as it findes at least one argument that satisfies the condition, and it returns True/False instead of an array
+    // So refactor the line with the some() function and afterwards in render() we won't have to check the array lenght anymore
+
+    // .every() is a similar one, that makes sure that all elements satisfy a condition, and it returns True/False 
+
     let done = this.state.todos.filter(todo => todo.complete);
     let todos = this.generateViewList(this.state);
     let todoList = this.createTodoList(todos);
