@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import Form from "./Form.js";
 import Filters from "./Filters.js";
 import Todo from "./Todo.js";
-import List from './List';
+import List from "./List";
 
-import {
-  ListContainer,
-  ItemsContainer
-} from "./TodosStyle.js";
+import { ListContainer, ItemsContainer } from "./TodosStyle.js";
 
 class TodoList extends Component {
   state = {
@@ -27,17 +24,15 @@ class TodoList extends Component {
         <Form addTodo={this.handleAddTodo} />
         <div> Active todos: {active.length}</div>
         <ItemsContainer>
-          
-        <List list={todoList} /> 
-          
-      <Filters 
-        changeFilter = {this.changeFilter}
-        toggleAllCompleted = {this.toggleAllDone}
-        allCompleted = {this.allTrue}
-        isCompleted = {isDone}
-        deleteAllCompleted = {this.deleteAllDone}
-      />
-        
+          <List list={todoList} />
+
+          <Filters
+            changeFilter={this.changeFilter}
+            toggleAllDone={this.toggleAllDone}
+            deleteAllDone={this.deleteAllDone}
+            allCompleted={this.state.allTrue}
+            isCompleted={isDone}
+          />
         </ItemsContainer>
       </ListContainer>
     );
@@ -50,14 +45,13 @@ class TodoList extends Component {
   };
 
   generateViewList(prevState) {
-
     let todos = [...prevState.todos];
     if (prevState.filter === "all") {
       todos = [...prevState.todos];
-    } 
+    }
     if (prevState.filter === "done") {
       todos = prevState.todos.filter(todo => todo.complete);
-    } 
+    }
     if (prevState.filter === "active") {
       todos = prevState.todos.filter(todo => !todo.complete);
     }

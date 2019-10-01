@@ -25,28 +25,30 @@ const Button = styled.button`
   }
 `;
 
-const Filters = (props) => {
-  return(
+
+
+const Filters = ({
+  changeFilter,
+  toggleAllDone,
+  deleteAllDone,
+  isCompleted,
+  allCompleted
+}) => {
+  return (
     <Filter>
       Filters:
-      <Button onClick={() => props.changeFilter('all')}>
-        All Todos
+      <Button onClick={() => changeFilter("all")}>All Todos</Button>
+      <Button onClick={() => changeFilter("active")}>Active Todos</Button>
+      <Button onClick={() => changeFilter("done")}>Done Todos</Button>
+      <Button onClick={toggleAllDone}>
+        Toggle {allCompleted ? "done" : "active"}
       </Button>
-      <Button onClick={() => props.changeFilter('active')}>
-        Active Todos
-      </Button>
-      <Button onClick={() => props.changeFilter('done')}>
-        Completed Todos
-      </Button>
-      <Button onClick={props.toggleAllCompleted}>
-        Toggle { props.allCompleted ? 'done' : 'active'}
-      </Button>
-      {
-        props.isCompleted ? <Button onClick={props.deleteAllCompleted}>Delete All Completed</Button> : null
-      }
-
+      {isCompleted ? <Button onClick={deleteAllDone}>Delete All Done</Button> : null}
     </Filter>
-  )
-}
+  );
+};
+
+
+
 
 export default Filters;
