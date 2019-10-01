@@ -21,11 +21,13 @@ export const Text = styled.div`
   
 `;
 
-export const DeleteButton = styled.button`
+export const Delete = styled.button`
   border: none;
   background: transparent;
   color: #009999;
   cursor: pointer;
+  transform: rotate(45deg);
+  font-size: 20px;
   :hover{
 
   }

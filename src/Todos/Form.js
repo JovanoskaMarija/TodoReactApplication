@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import shortid from "short-id";
 
 
-import {AddTodoForm, AddTodoInput, AddTodoButton} from './FormStyle.js'
+import {AddForm, AddInput, AddButton} from './FormStyle.js'
 
 class Form extends Component {
   
@@ -18,7 +18,6 @@ class Form extends Component {
         complete: false,
         id: shortid.generate()
       });
-      this.setState({ text: "" }); // TODO: Remove line since it's redundant
     }
     
     this.setState({ text: "" });
@@ -33,16 +32,16 @@ class Form extends Component {
   render() {
 
     return (
-      <AddTodoForm onSubmit={this.handleSubmit}>
-        <AddTodoInput
+      <AddForm onSubmit={this.handleSubmit}>
+        <AddInput
             onChange={this.handleChange}
             value={this.state.text}
             name="text"
             placeholder="Add todo.." >
-        </AddTodoInput>
-        <AddTodoButton type="submit"  disabled={!this.state.text}> Add Todo </AddTodoButton>
+        </AddInput>
+        <AddButton type="submit"  disabled={!this.state.text}> Add Todo </AddButton>
         {/* <RenderCount />  */}
-      </AddTodoForm>
+      </AddForm>
     );
   }
 }

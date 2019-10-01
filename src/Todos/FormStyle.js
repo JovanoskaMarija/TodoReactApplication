@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const AddTodoForm = styled.form`
+export const AddForm = styled.form`
   display: inline;
 `;
 
-export const AddTodoInput = styled.input`
+export const AddInput = styled.input`
   width: 70%;
   border: none;
   padding: 8px 0 8px 30px;
@@ -14,7 +14,7 @@ export const AddTodoInput = styled.input`
   box-sizing:border-box;
 `;
 
-export const AddTodoButton = styled.button`
+export const AddButton = styled.button`
   width: 30%;
   padding: 8px;
   border: none;
